@@ -1,0 +1,9 @@
+"AAA123","Manana",1000
+"CCC456","Tarde",1500
+"ASD567","Noche",1600
+ABC123,tarde,1500
+ABC123,tarde,1500
+ABC123,tarde,1500
+ABC123,tarde,1500
+ABC123,tarde,1500
+ABC123,tarde,1500
