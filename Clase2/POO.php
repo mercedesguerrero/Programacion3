@@ -1,12 +1,20 @@
+<?php  
 
 class Alumno{
 	
-	private $nombre;
+	private $_nombre;
 
-	private function NombreMetodo($nombre)
+	function __construct()
 	{
 
+	}
 
+	private function NombreMetodo($_nombre)
+	{
 
+		echo "Tu nombre es: ".$_nombre;
+
+	}
 }
-}
+
+?>
