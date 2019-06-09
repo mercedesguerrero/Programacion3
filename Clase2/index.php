@@ -2,8 +2,8 @@
 <?php 
 
 	//aca se crean los objetos, es como el main
-	require_once "Conteiner.php";
-	require_once "Producto.php";
+	require_once "./Conteiner.php";
+	require_once "./Producto.php";
 
 	$conteiner1= new Conteiner(1, 1000, "chico");
 

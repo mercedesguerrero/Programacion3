@@ -1,7 +1,7 @@
 <?php 
 
 	class Producto{
-		private $_id;
+		private $_idProd;
 		private $_nombre;
 		private $_importador;
 		private $_pais;
@@ -9,17 +9,29 @@
 
 		function __construct($id, $nombre, $importador, $pais, $kilos)
 		{
-			$this->_id= $id;
+			$this->_idProd= $id;
 			$this->_nombre= $nombre;
 			$this->_importador= $importador;
 			$this->_pais= $pais;
 			$this->_kilos= $kilos;
 		}
 
-		function Mostrar()
+		function getId()
 		{
-			echo "<div>" . "Id producto: " . $unProducto->_id . " | Nombre: " . $unProducto->_nombre . " | Importador: " . $unProducto->_importador . " | Pais: " . $unProducto->_pais . " | Kilos: " . $unProducto->_kilos . "</div>";
+			return $this->$_idProd;
 		}
+
+		function getKilos()
+		{
+			return $this->$_kilos;
+		}
+
+		function MostrarProducto()
+		{
+			echo "<div>" . "Id producto: " . $unProducto->_idProd . " | Nombre: " . $unProducto->_nombre . " | Importador: " . $unProducto->_importador . " | Pais: " . $unProducto->_pais . " | Kilos: " . $unProducto->_kilos . "</div>";
+		}
+
+
 
 
 	}

@@ -22,16 +22,16 @@
 			$this->_capacidad= $capacidad;
 		}
 
-		function Mostrar()
+		function MostrarContainer()
 		{
 			echo "<div>" . "Id conteiner: " . $this->_id . " | Capacidad: " . $this->_capacidad . " | Tamaño: " . $this->_tamanio . "</div>";
 		}
 
 		function MostrarContenido()
 		{
-			foreach ($_listaDeProductos as $value) {
+			foreach ($this->$_listaDeProductos as $producto) {
 
-				$unProducto->Mostrar();
+				echo Producto::MostrarProducto($producto);
 			}
 
 		}
@@ -55,24 +55,14 @@
 
 		function existeProducto($unProducto)
 		{
-			$retorno= FALSE;
-
-			foreach ($this->_listaDeProductos as $value->_id) {
-
-				if ($unProducto->_id == $value->_id) 
-				{
-					$retorno= TRUE;
-				}	
-			}
-
-			return $retorno;
+			return in_array($unProducto, $this->$_listaDeProductos);
 		}
 
 		function hayKilosLibres($unProducto)
 		{
 			$retorno= FALSE;
 
-			if ($this->_capacidad>= $unProducto->_kilos) 
+			if ($this->_capacidad >= $unProducto->getKilos()) 
 			{
 				$retorno= TRUE;
 			}
