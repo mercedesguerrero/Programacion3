@@ -13,7 +13,7 @@
 			$this->_importe= $precio;
 		}
 
-		function Mostrar()
+		function MostrarVehiculo()
 		{
 			echo "Patente: $this->_patente  | Ingreso: $this->_ingreso | Importe: $this->_importe <br />";
 		}

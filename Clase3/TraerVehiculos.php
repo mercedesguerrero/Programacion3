@@ -5,8 +5,8 @@
 
 	$listado= Vehiculo::Leer();
 
-	foreach ($listado as $auto) {
+	foreach ($listado as &$auto) {
 		
-		$auto->Mostrar();
+		$auto->MostrarVehiculo();
 	}
  ?>
