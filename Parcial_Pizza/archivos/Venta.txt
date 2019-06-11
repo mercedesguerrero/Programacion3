@@ -1,0 +1,5 @@
+{"id":1,"email":"mer@mer.com","sabor":"jamon","tipo":"piedra","cantUnidades":"1"}
+{"id":2,"email":"lean@lean.com","sabor":"especial","tipo":"molde","cantUnidades":"1"}
+{"id":3,"email":"octavio@octavio.com","sabor":"especial","tipo":"molde","cantUnidades":"1"}
+{"id":4,"email":"octavio@octavio.com","sabor":"pistacho","tipo":"molde","cantUnidades":"1"}
+{"id":5,"email":"octavio@octavio.com","sabor":"pistacho","tipo":"molde","cantUnidades":"1"}

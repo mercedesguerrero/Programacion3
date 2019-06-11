@@ -130,7 +130,7 @@ class Venta
         return null;
     }
 
-    //manejo de IMAGENES
+    
     public function CargarImagen($files, $rutaCarpetaImagenes)
     {
         if(isset($files))
@@ -139,24 +139,13 @@ class Venta
             if($extension != null)
             {
                 date_default_timezone_set("America/Argentina/Buenos_Aires");
-                $nombreDelArchivoImagen = strtolower($this->sabor)."_".date('Ymd').$extension;
+                $mail= explode("@", $this->email);
+                $nombreDelArchivoImagen = $this->tipo."_".strtolower($this->sabor)."_".$mail[0]."_".date('Ymd').$extension;
                 $rutaCompletaImagen = $rutaCarpetaImagenes.$nombreDelArchivoImagen;
                 return move_uploaded_file($files["tmp_name"], $rutaCompletaImagen);
             }
         }
         return false;
-    }
-    //fin de manejo de IMAGENES
-
-    public static function TraerMayorId($ventas)
-    {
-        $maxId = $ventas[0]->id;
-        foreach ($ventas as $vendido)
-        {
-            if($vendido->id > $maxId)
-                $maxId = $vendido->id;
-        }
-        return $maxId;
     }
 
     public static function TraerExtensionImagen($files)
@@ -174,6 +163,18 @@ class Venta
                 break;
         }
         return $extension;
+    }
+    
+
+    public static function TraerMayorId($ventas)
+    {
+        $maxId = $ventas[0]->id;
+        foreach ($ventas as $vendido)
+        {
+            if($vendido->id > $maxId)
+                $maxId = $vendido->id;
+        }
+        return $maxId;
     }
 
 

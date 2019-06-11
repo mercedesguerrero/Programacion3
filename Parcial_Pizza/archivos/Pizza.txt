@@ -1,4 +1,9 @@
-{"id":1,"sabor":"especial","precio":"298","tipo":"molde","cantUnidades":"1"}
-{"id":2,"sabor":"jamon","precio":"145","tipo":"piedra","cantUnidades":"1"}
+{"id":1,"sabor":"especial","precio":"298","tipo":"molde","cantUnidades":0}
+{"id":2,"sabor":"jamon","precio":"145","tipo":"piedra","cantUnidades":0}
 {"id":3,"sabor":"muzza","precio":"245","tipo":"molde","cantUnidades":"2"}
 {"id":4,"sabor":"muzza","precio":"198","tipo":"piedra","cantUnidades":"2"}
+{"id":5,"sabor":"especial","precio":"198","tipo":"piedra","cantUnidades":"2"}
+{"id":6,"sabor":"especial","precio":"198","tipo":"molde","cantUnidades":1}
+{"id":7,"sabor":"jamon","precio":"198","tipo":"molde","cantUnidades":"1"}
+{"id":8,"sabor":"especial","precio":"300","tipo":"molde","cantUnidades":"1"}
+{"id":9,"sabor":"pistacho","precio":"300","tipo":"molde","cantUnidades":0}

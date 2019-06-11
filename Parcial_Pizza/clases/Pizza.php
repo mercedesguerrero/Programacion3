@@ -147,7 +147,7 @@ class Pizza
         }
         return false;
     }
-/*
+
     public static function TraerPizzaPorId($path, $id)
     {
         $pizzasList = self::Cargar($path);
@@ -177,7 +177,7 @@ class Pizza
         }
         return null;
     }
-    */
+    
     public static function TraerMayorId($pizzasList)
     {
         $maxId = $pizzasList[0]->id;
@@ -187,6 +187,81 @@ class Pizza
                 $maxId = $zapi->id;
         }
         return $maxId;
+    }
+
+    public function Vender($path, $cantUnidades)
+    {
+        $pizzasList = self::Cargar($path);
+        if($pizzasList != null)
+        {
+            if(self::ExistePizzaEnLista($pizzasList, $this))
+            {
+                foreach ($pizzasList as $key => $zapi)
+                {
+                    if($zapi->id == $this->id)
+                    {
+                        $pizzasList[$key]->cantUnidades -= $cantUnidades;
+                        break;
+                    }
+                }
+                return self::GuardarTodo($pizzasList, $path);
+            }
+        }
+        return false;
+    }
+
+    public function CargarImagen($files, $pathCarpetaImagenes)
+    {
+        if(isset($files))
+        {
+            $extension = self::TraerExtensionImagen($files);
+            if($extension != null)
+            {
+                $nombreDelArchivoImagen = $this->tipo."_".strtolower($this->sabor).$extension;
+                $pathCompletaImagen = $pathCarpetaImagenes.$nombreDelArchivoImagen;
+                return move_uploaded_file($files["tmp_name"], $pathCompletaImagen);
+            }
+        }
+        return false;
+    }
+
+    public static function TraerExtensionImagen($files)
+    {
+        switch ($files["type"])
+        {
+            case 'image/jpeg':
+                $extension = ".jpg";
+                break;
+            case 'image/png':
+                $extension = ".png";
+                break;
+            default:
+                return null;
+                break;
+        }
+        return $extension;
+    }
+
+
+    public function BorrarPizza($path)
+    {
+        $pizzasList = self::Cargar($path);
+        if($pizzasList != null)
+        {
+            if(self::ExistePizzaEnLista($pizzasList, $this))
+            {
+                foreach ($pizzasList as $key => $zapi)
+                {
+                    if($zapi->id == $this->id)
+                    {
+                        unset($pizzasList[$key]);
+                        break;
+                    }
+                }
+                return self::GuardarTodo($pizzasList, $path);
+            }
+        }
+        return false;
     }
 
     public function IsEqual($otraPizza)
