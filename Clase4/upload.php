@@ -79,7 +79,7 @@ if ($uploadOk === FALSE) {
 	//MUEVO EL ARCHIVO DEL TEMPORAL AL DESTINO FINAL
     if (move_uploaded_file($_FILES["archivo"]["tmp_name"], $destino)) {
 
-    	//ManejadorDeArchivos::hacerMarcaDeAgua($destino);
+    	ManejadorDeArchivos::hacerMarcaDeAgua($destino);
 
         echo "<br/>El archivo " . $destino . " ha sido subido exitosamente.";
 
