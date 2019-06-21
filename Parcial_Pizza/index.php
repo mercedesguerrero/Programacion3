@@ -6,15 +6,16 @@ $RUTA_PIZZA="./archivos/Pizza.txt";
 $RUTA_VENTAS="./archivos/Venta.txt";
 $RUTA_CARPETA_IMAGENES_VENTAS = "./imagenesDeLaVenta/";
 $RUTA_CARPETA_IMAGENES = "./imagenesDePizza/";
+$RUTA_IMAGENES_BACKUP = "./backUpFotos";
 
 $content= file_get_contents("php://input");
 
-$caso = $_SERVER['REQUEST_METHOD'];
-echo $caso . "<br>";
+$method = $_SERVER['REQUEST_METHOD'];
+echo $method . "<br>";
 
-switch ($caso) 
+switch ($method) 
 {
-  case "GET":
+    case "GET":
         switch (key($_GET)) {
             case 'pizzacarga':
                 include "funciones/PizzaCarga.php";
@@ -23,7 +24,7 @@ switch ($caso)
         break; 
     case "POST":
         switch (key($_POST)) {
-            case 'pizzacargaconimagen'://POST funciona ok
+            case 'pizzacargaconimagen'://POST
                 include "funciones/PizzaCargaConImagen.php";
                 break;    
             case 'pizzaconsultar':
@@ -32,10 +33,18 @@ switch ($caso)
             case 'altaventa':
                 include "funciones/AltaVenta.php";
                 break;
-            case 'altaventaconimagen'://POST funciona ok
+            case 'altaventaconimagen'://POST
                 include "funciones/AltaVentaConImagen.php";
                 break;
         }
+        break;
+    case "PUT":
+        parse_str($content, $_PUT);
+        include "funciones/PizzaCargaPlus.php";
+        break;
+    case 'DELETE':
+        parse_str($content, $_DELETE);
+        include "funciones/BorrarPizza.php";
         break;
     
 }     

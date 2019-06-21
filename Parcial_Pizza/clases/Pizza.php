@@ -162,6 +162,21 @@ class Pizza
         return null;
     }
 
+    public static function DevuelvePizzaxSaboryTipo($path, $sabor, $tipo)
+    {
+        $pizzasList = self::Cargar($path);
+
+        if($pizzasList != null)
+        {
+            foreach ($pizzasList as $zapi)
+            {
+                if($zapi->sabor == $sabor && $zapi->tipo == $tipo)
+                    return $zapi;
+            }
+        }
+        return null;
+    }
+
     public static function TraerIdStock($path, $sabor, $tipo, $cantUnidades)
     {
         $pizzasList = self::Cargar($path);
@@ -243,16 +258,62 @@ class Pizza
     }
 
 
-    public function BorrarPizza($path)
+    public static function ModificarStockYPrecio($path, $sabor, $tipo, $precio, $cantidad)
+    {
+        $pizzasList = self::Cargar($path);
+        
+        if(!$pizzasList || $pizzasList == "NADA")
+        {
+            echo "<br/>No hay pizzas cargadas.";
+            die;
+        }
+        if(!self::ExistePizzaPorSaborYTipo($path, $sabor, $tipo))
+        {
+            echo "<br/>No hay pizza de ".$sabor." tipo ".$tipo.".";
+        }
+        else
+        {
+            foreach ($pizzasList as $key => $zapi)
+            {
+                if($zapi->sabor == $sabor && $zapi->tipo == $tipo)
+                {
+                    $zapi->precio= $precio;
+                    $zapi->cantUnidades+= $cantidad;
+                    break;
+                }
+            }
+        }
+        return self::GuardarTodo($pizzasList, $path);
+    }
+
+    public static function DevuelveArrayXsaborYtipo($path, $sabor, $tipo)
     {
         $pizzasList = self::Cargar($path);
         if($pizzasList != null)
         {
-            if(self::ExistePizzaEnLista($pizzasList, $this))
+            $newpizzasList = array();
+            foreach ($pizzasList as $zapi)
+            {
+                if($zapi->sabor == $sabor && $zapi->tipo == $tipo)
+                    array_push($newpizzasList, $zapi);
+            }
+            if(count($newpizzasList) > 0)
+                return $newpizzasList;
+        }
+        return null;
+    }
+
+    public function BorrarPizza($path, $pizzaABorrar)
+    {
+        $pizzasList = self::Cargar($path);
+
+        if($pizzasList != null)
+        {
+            if(self::ExistePizzaEnLista($pizzasList, $pizzaABorrar))
             {
                 foreach ($pizzasList as $key => $zapi)
                 {
-                    if($zapi->id == $this->id)
+                    if($zapi->sabor == $pizzaABorrar->sabor && $zapi->tipo == $pizzaABorrar->tipo)
                     {
                         unset($pizzasList[$key]);
                         break;
@@ -264,6 +325,33 @@ class Pizza
         return false;
     }
 
+    public function MoverImgABackUp($carpetaFotosBackup, $carpetaFotos, $path)
+    {
+        $pizza = self::DevuelvePizzaxSaboryTipo($path, $this->sabor, $this->tipo);
+            
+        if(!$pizza)
+        {
+            echo "<br/>No existe esa pizza.";
+            die;
+        }
+        $extension = ".jpg";        
+        $fotoPizza= $pizza->tipo . "_" . $pizza->sabor . $extension;
+        $pathFotoOriginal = $carpetaFotos . $fotoPizza;
+            
+        if(file_exists($pathFotoOriginal))
+        {
+            date_default_timezone_set("America/Argentina/Buenos_Aires");
+            $pathFotoBackUp = $carpetaFotosBackup . "/" . date('Ymd') . "_" . $fotoPizza;
+            return rename ($pathFotoOriginal, $pathFotoBackUp);
+        }
+        else
+        {
+            echo '<br/>Error! no existe la imagen.';
+            die;
+        }
+    }
+
+
     public function IsEqual($otraPizza)
     {
         return  $this->sabor == $otraPizza->sabor && 
@@ -271,6 +359,7 @@ class Pizza
                 $this->tipo == $otraPizza->tipo &&
                 $this->cantUnidades == $otraPizza->cantUnidades;
     }
+
 
 
 }
