@@ -31,5 +31,5 @@ if(isset($_POST['sabor']) && isset($_POST['precio']) && isset($_POST['tipo']) &&
         echo 'Error cargue "tipo" como "molde" o "piedra".';
 }
 else
-    echo 'Error cargue "id", "sabor", "precio", "tipo", "cantidad" y "imagen".';
+    echo 'Error cargue "sabor", "precio", "tipo", "cantidad" y "imagen".';
 ?>

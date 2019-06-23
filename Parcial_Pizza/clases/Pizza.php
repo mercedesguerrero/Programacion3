@@ -351,6 +351,26 @@ class Pizza
         }
     }
 
+    public static function ImgPizzasEnTabla($path)
+    {
+        $imagenes = scandir($path);
+
+        $retorno = "<table border = 3 bordercolor = red align = left>";
+        $retorno .= "<tbody>";
+        foreach ($imagenes as $img)
+        {
+            if(!file_exists($img))
+            {
+                $retorno .= "<tr>";
+                $retorno .= "<td><img src='" . $path . $img . "' height='160' width='160' /></td>";
+                $retorno .= "</tr>";
+            }
+        }
+        $retorno .= "</tbody>"; 
+        $retorno .= "</table>";
+    
+        return "<div> " . $retorno . "</div>";
+    }
 
     public function IsEqual($otraPizza)
     {

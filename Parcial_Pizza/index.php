@@ -20,6 +20,9 @@ switch ($method)
             case 'pizzacarga':
                 include "funciones/PizzaCarga.php";
                 break;
+            case 'mostrarFotos':
+                include "funciones/ListadoDeImagenes.php";
+                break;
         }
         break; 
     case "POST":
