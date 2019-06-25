@@ -26,7 +26,7 @@ class Venta
         {
             $maxId = self::TraerMayorId($ventas);
             $this->id = $maxId + 1;
-            if(!self::ExisteVentaEnLista($ventas, $this))
+            if(!self::ExisteVentaEnLista($ventas, $this)) 
             {
                 if(file_exists($ruta))
                 {

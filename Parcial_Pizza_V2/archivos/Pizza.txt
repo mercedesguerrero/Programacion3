@@ -16,3 +16,4 @@
 {"id":18,"sabor":"especial","precio":"290","tipo":"molde","cantUnidades":"3"}
 {"id":20,"sabor":"especial","precio":"290","tipo":"piedra","cantUnidades":"3"}
 {"id":21,"sabor":"especial","precio":"290","tipo":"piedra","cantUnidades":"3"}
+{"id":22,"sabor":"pistacho","precio":"300","tipo":"molde","cantUnidades":"2"}

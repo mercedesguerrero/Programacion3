@@ -1,0 +1,5 @@
+{"id":1,"email":"tacho@ta","alias":"tacho","tipo":"encargado","edad":"25"}
+{"id":3,"email":"matias@oct","alias":"cuchu","tipo":"encargado","edad":"68"}
+{"id":5,"email":"mer@oct","alias":"cuchu","tipo":"encargado","edad":"26"}
+{"id":6,"email":"stella@oct","alias":"nacho","tipo":"repartidor","edad":"26"}
+{"id":7,"email":"stella@oct","alias":"cuchu","tipo":"repartidor","edad":"26"}
