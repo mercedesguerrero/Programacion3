@@ -1,0 +1,8 @@
+{"id":1,"email":"mer@mer.com","sabor":"jamon","tipo":"piedra","cantUnidades":"1"}
+{"id":2,"email":"lean@lean.com","sabor":"especial","tipo":"molde","cantUnidades":"1"}
+{"id":3,"email":"octavio@octavio.com","sabor":"especial","tipo":"molde","cantUnidades":"1"}
+{"id":4,"email":"octavio@octavio.com","sabor":"pistacho","tipo":"molde","cantUnidades":"1"}
+{"id":5,"email":"octavio@octavio.com","sabor":"pistacho","tipo":"molde","cantUnidades":"1"}
+{"id":6,"email":"stella@stella.com","sabor":"jamon","tipo":"piedra","cantUnidades":"1"}
+{"id":7,"email":"mer@mer","sabor":"jamon","tipo":"molde","cantUnidades":"1"}
+{"id":8,"email":"mer@mer","sabor":"pistacho","tipo":"piedra","cantUnidades":"1"}

@@ -1,0 +1,4 @@
+{"producto":"cafe","cantidad":"109","proveedor":"1"}
+{"producto":"leche","cantidad":"10","proveedor":"1"}
+{"producto":"jugo","cantidad":"5","proveedor":"2"}
+{"producto":"gaseosa","cantidad":"4","proveedor":"2"}

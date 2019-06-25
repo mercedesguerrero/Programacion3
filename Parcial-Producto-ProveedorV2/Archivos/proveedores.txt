@@ -1,0 +1,4 @@
+{"id":"1","nombre":"mariano","email":"marianomadou@gmail.com","foto":"1_mariano.jpg"}
+{"id":"2","nombre":"lucila","email":"luloops@gmail.com","foto":"2_lucila.jpg"}
+{"id":"3","nombre":"Carlos","email":"ccamal@mecon.gov.ar","foto":"3_carlos.jpg"}
+{"id":"4","nombre":"alberto","email":"alberto@mecon.gob.ar","foto":"4_alberto.jpg"}
