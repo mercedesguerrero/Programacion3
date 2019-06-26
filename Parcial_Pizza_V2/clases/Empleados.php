@@ -190,7 +190,6 @@ class Empleado
                     if($emp->tipo == $empleadoABorrar->tipo || $emp->email == $empleadoABorrar->email)
                     {
                         unset($empleadosList[$key]);
-                        break;
                     }
                 }
                 return self::GuardarTodo($empleadosList, $path);
