@@ -10,28 +10,29 @@
         $empleadosABorrar = Empleado::DevuelveEmpleadoPorMailoTipo($RUTA_EMPLEADOS, $email, $tipo);
         var_dump($empleadosABorrar);
 
-        foreach ($empleadosABorrar as $empleadoABorrar) {
-            if($empleadoABorrar != null)
-            {  
-                //if($empleadoABorrar->MoverImgABackUp($RUTA_IMAGENES_BACKUP_EMP, $RUTA_CARPETA_IMAGENES_EMPLEADOS, $RUTA_EMPLEADOS))
-                //{
+        if($empleadosABorrar != null){
+            foreach ($empleadosABorrar as $empleadoABorrar) 
+            {
+                if($empleadoABorrar != null)
+                {  
                     if($empleadoABorrar->BorrarEmpleado($RUTA_EMPLEADOS, $empleadoABorrar)!=null)
                     {
-                        echo "Se guardo la imagen en Backup y se borro del archivo.";
+                        echo "Se borro del archivo.";
                     }
                     else
                     {
                         echo "No se pudo borrar.";
                     }
-                }
-                //else
-                //{
-                  //  echo "No se pudo guardar la imagen en backup.";
-                //}
-            //}
-            
-        }
+                }  
+            }
 
+        }
+        else
+        {
+            echo "No hay empleado con email: " . $email . " y tipo: " . $tipo;
+        }
+                
+        
         
     }
 
@@ -44,28 +45,23 @@
         $empleadosABorrar = Empleado::DevuelveEmpleadoPorMail($RUTA_EMPLEADOS, $email);
         var_dump($empleadosABorrar);
 
-        foreach ($empleadosABorrar as $empleadoABorrar) {
-            if($empleadoABorrar != null)
-            {  
-                //if($empleadoABorrar->MoverImgABackUp($RUTA_IMAGENES_BACKUP_EMP, $RUTA_CARPETA_IMAGENES_EMPLEADOS, $RUTA_EMPLEADOS))
-                //{
-                    if($empleadoABorrar->BorrarEmpleado($RUTA_EMPLEADOS, $empleadoABorrar)!=null)
-                    {
-                        echo "Se borro del archivo.";
-                    }
-                    else
-                    {
-                        echo "No se pudo borrar.";
-                    }
+        if($empleadosABorrar != null){
+            foreach ($empleadosABorrar as $empleadoABorrar)
+            {
+                if($empleadoABorrar->BorrarEmpleado($RUTA_EMPLEADOS, $empleadoABorrar)!=null)
+                {
+                    echo "Se borro del archivo.";
                 }
-                //else
-                //{
-                  //  echo "No se pudo guardar la imagen en backup.";
-                //}
-            //}
-            
+                else
+                {
+                    echo "No se pudo borrar.";
+                }    
+            }
         }
-
+        else
+        {
+            echo "No hay empleado con email: " . $email;
+        }
         
     }
 
@@ -78,32 +74,24 @@
         $empleadosABorrar = Empleado::DevuelveEmpleadoPorTipo($RUTA_EMPLEADOS, $tipo);
         var_dump($empleadosABorrar);
 
-        foreach ($empleadosABorrar as $empleadoABorrar) {
-            if($empleadoABorrar != null)
-            {  
-                //if($empleadoABorrar->MoverImgABackUp($RUTA_IMAGENES_BACKUP_EMP, $RUTA_CARPETA_IMAGENES_EMPLEADOS, $RUTA_EMPLEADOS))
-                //{
-                    if($empleadoABorrar->BorrarEmpleado($RUTA_EMPLEADOS, $empleadoABorrar)!=null)
-                    {
-                        echo "Se borro del archivo.";
-                    }
-                    else
-                    {
-                        echo "No se pudo borrar.";
-                    }
-                }
-                //else
-                //{
-                  //  echo "No se pudo guardar la imagen en backup.";
-                //}
-            //}
-            
-        }
+        if($empleadosABorrar != null){
 
-        
-    }
-    else
-    {
-        echo "No hay empleado con email: " . $email . " y tipo: " . $tipo;
-    }
+            foreach ($empleadosABorrar as $empleadoABorrar) 
+            {
+               
+                if($empleadoABorrar->BorrarEmpleado($RUTA_EMPLEADOS, $empleadoABorrar)!=null)
+                {
+                    echo "Se borro del archivo.";
+                }
+                else
+                {
+                    echo "No se pudo borrar.";
+                }
+            }
+
+        }
+        else
+        {
+            echo "No hay empleado con email: " . $email . " y tipo: " . $tipo;
+        }
 ?>
