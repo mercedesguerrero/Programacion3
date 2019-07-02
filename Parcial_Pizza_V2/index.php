@@ -10,7 +10,7 @@ $RUTA_CARPETA_IMAGENES_VENTAS = "./imagenesDeLaVenta/";
 $RUTA_CARPETA_IMAGENES_EMPLEADOS = "./imagenesDeEmpleados/";
 $RUTA_CARPETA_IMAGENES = "./imagenesDePizza/";
 $RUTA_IMAGENES_BACKUP = "./backUpFotos/";
-$RUTA_IMAGENES_BACKUP = "./backUpFotosEmpleados/";
+$RUTA_IMAGENES_BACKUP_EMP = "./backUpFotosEmpleados/";
 
 $content= file_get_contents("php://input");
 
